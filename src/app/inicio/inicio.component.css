@@ -1,4 +1,64 @@
+mat-toolbar{
+    background-color: #252525;
+}
+
+.body{
+    background-color: #1d1d1d;
+    
+}
+.contenedor{
+    padding-top: 5%;
+}
+
+.listaPelicula{
+} 
+
+.button{
+    outline: none;
+}
+
 .example-card {
     max-width: 400px;
+    margin-left: 10%;
+    margin-bottom: 10%;
+    background-color: #272626;
   }
-  
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+mat-card-header-text{
+    margin-left: 0% !important;
+}
+
+.crop-image{
+    height: 430px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 10%;
+    margin-left: -8%;
+  }
+
+.crop-image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+  }  
+
+
+mat-card-title{
+    text-align: center;
+    color: #ffffff;
+}
+
+mat-card-subtitle{
+    padding: 2%;
+    color: #ffffff;
+}
+
+mat-icon{
+    color: #ffffff;
+}
