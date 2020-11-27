@@ -7,17 +7,23 @@ import { InicioComponent } from './inicio/inicio.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
+import { AddPeliComponent } from './add-peli/add-peli.component';
+import { PeliDetailComponent } from './peli-detail/peli-detail.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InicioComponent
+    InicioComponent,
+    AddPeliComponent,
+    PeliDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,57 @@
+<div style="width: 400px; margin: auto;">
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="title">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            required
+            [(ngModel)]="peli.name"
+            name="title"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="sinopsis">Sinopsis</label>
+          <input
+            class="form-control"
+            id="sinopsis"
+            required
+            [(ngModel)]="peli.sinopsis"
+            name="sinopsis"
+          />
+        </div>
+
+        <div class="form-group">
+            <label for="description">Imagen</label>
+            <input
+              class="form-control"
+              id="img"
+              required
+              [(ngModel)]="peli.img"
+              name="img"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="id">ID</label>
+            <input
+              class="form-control"
+              id="id"
+              required
+              [(ngModel)]="peli.id"
+              name="id"
+            />
+          </div>
+  
+        <button (click)="savePeli()" class="btn btn-success">Enviar</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <h4>You submitted successfully!</h4>
+        <button class="btn btn-success" (click)="newPeli()">Agregar</button>
+      </div>
+    </div>
+  </div>
