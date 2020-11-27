@@ -15,6 +15,7 @@
         mat-icon-button="mat-icon-button"
         matTooltipClass="primary-tooltip"
         aria-label="Example icon-button with a heart icon"
+        routerLink="/add-peli"
     >
         <mat-icon>add_circle_outline</mat-icon>
     </button>
@@ -80,18 +81,18 @@
         <!-- <mat-card class="example-card" *ngFor="let pelicula of peliculas">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>{{pelicula.name}}</mat-card-title>
-      <mat-card-subtitle>{{ pelicula.sinopsis}}</mat-card-subtitle>
+      <mat-card-title>{{ pelicula.name }}</mat-card-title>
+      <mat-card-subtitle>{{ pelicula.sinopsis }}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="{{pelicula.img}}">
+    <img mat-card-image src="{{ pelicula.img }}">
     <mat-card-content>
       <p>
         
       </p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
+      <button mat-button routerLink="/peli-detail/:id" >Editar</button>
+      <button mat-button routerLink="/peli-detail/:id">Borrar</button>
     </mat-card-actions>
   </mat-card> -->
     </div>

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Peli } from '../models/peli';
 
 @Component({
   selector: 'app-inicio',
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class InicioComponent implements OnInit {
 
   peticion: any;
-  peliculas = [];
+  peliculas: Peli[] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -17,6 +18,7 @@ export class InicioComponent implements OnInit {
     this.catalogos();
     this.catalogo();
   }
+
 
   catalogo(): void{
     const urlApi = 'https://6h3v78tvk2.execute-api.us-east-2.amazonaws.com/dev';
