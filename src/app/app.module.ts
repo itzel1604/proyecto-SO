@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './inicio/inicio.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import {MatCardModule} from '@angular/material/card';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -12,7 +15,9 @@ import { InicioComponent } from './inicio/inicio.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,17 @@
-<p>inicio works!</p>
+<mat-card class="example-card" *ngFor="let pelicula of peliculas">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{pelicula.name}}</mat-card-title>
+      <mat-card-subtitle>{{ pelicula.sinopsis}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{pelicula.img}}">
+    <mat-card-content>
+      <p>
+        
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
