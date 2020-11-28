@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Peli } from '../models/peli';
 import { PeliService } from '../services/peli.service';
 
@@ -13,13 +14,10 @@ export class InicioComponent implements OnInit {
   peticion: any;
   peliculas: Peli[] = [];
 
-  constructor(
-    private http: HttpClient,
-    private peliService: PeliService
-    ) { }
+  constructor(private http: HttpClient,
+              private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-    this.catalogos();
     this.catalogo();
   }
 
@@ -39,12 +37,20 @@ export class InicioComponent implements OnInit {
     return data;
   }
 
-  deletePeli(id: string) {
-    this.peliService.deletePeli(id)
-      .then((data) => {
-        alert('Pelicula eliminada con éxito');
-        window.location.reload();
-      });
+  async deletePeli(id: number){
+    const urlApi = 'https://6h3v78tvk2.execute-api.us-east-2.amazonaws.com/dev' + '/' + id;
+    const data: any = await this.http.delete(urlApi).toPromise();
+    this.openSnackBar();
+    this.catalogo();
+    return data;
+  }
+
+
+  openSnackBar(): void {
+    this.snackBar.open('Se elimino correctamente', '', {
+      duration: 2000,
+      panelClass: 'notif-success',
+    });
   }
 
 }
