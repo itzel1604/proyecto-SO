@@ -1,0 +1,64 @@
+mat-toolbar{
+    background-color: #252525;
+}
+
+.mat-icon{
+    color: rgb(241, 241, 241);
+}
+
+.fondo{
+    background-color: #1d1d1d;
+    height: 90vh;
+}
+
+.form {
+    min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.input{
+    width: 100%;
+}
+
+.contenedor{
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.fomulario{
+    padding-top: 5%;
+}
+
+.fomulario h1{
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: rgb(119, 118, 118) !important;
+  } 
+
+  ::ng-deep.mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: rgb(255, 255, 255) !important;;
+   }
+
+   ::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: rgb(255, 255, 255) !important;
+   }
+
+   ::ng-deep .mat-form-field-empty.mat-form-field-label {
+    color: rgb(117, 117, 117);
+}
+
+input.mat-input-element {
+    color: rgb(255, 255, 255);
+}
+
+.ver{
+    margin-left: 30%;
+}

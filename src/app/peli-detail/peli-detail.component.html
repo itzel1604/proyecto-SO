@@ -1,0 +1,79 @@
+<mat-toolbar>
+  
+    <button
+      class="button"
+      mat-icon-button="mat-icon-button"
+      matTooltipClass="primary-tooltip"
+      aria-label="Example icon-button with a heart icon"
+      routerLink="/inicio"
+    >
+      <mat-icon>reply</mat-icon>
+    </button>
+  
+    <span class="example-spacer"></span>
+  
+    <span>Nesflis</span>
+
+  </mat-toolbar>
+  
+  <div class="fondo">
+    <div class="contenedor">
+      <div class="fomulario">
+        
+        <form class="form">
+        <h1>Agregar pelicula</h1>
+          <mat-form-field class="input">
+            <mat-label>Nombre</mat-label>
+      
+            <input
+              matNativeControl="matNativeControl"
+              type="text"
+              matInput="matInput"
+              required="required"
+              name="title"
+            >
+          </mat-form-field>
+      
+          <mat-form-field class="input">
+            <mat-label>Sinopsis</mat-label>
+      
+            <input
+              matNativeControl="matNativeControl"
+              matInput="matInput"
+              type="text"
+              required="required"
+              name="sinopsis"
+            >
+          </mat-form-field>
+      
+          <mat-form-field class="input">
+            <mat-label>Imagen</mat-label>
+      
+            <input
+              matNativeControl="matNativeControl"
+              matInput="matInput"
+              type="text"
+              required="required"
+              name="img"
+            >
+          </mat-form-field>
+      
+          <mat-form-field class="input">
+            <mat-label>ID</mat-label>
+      
+            <input
+              matNativeControl="matNativeControl"
+              matInput="matInput"
+              type="number"
+              required="required"
+              name="id"
+            >
+          </mat-form-field>
+    
+    
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  

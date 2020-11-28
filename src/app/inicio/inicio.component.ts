@@ -42,7 +42,7 @@ export class InicioComponent implements OnInit {
   deletePeli(id: string) {
     this.peliService.deletePeli(id)
       .then((data) => {
-        alert('Provedor removido con éxito');
+        alert('Pelicula eliminada con éxito');
         window.location.reload();
       });
   }
