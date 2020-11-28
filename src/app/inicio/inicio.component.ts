@@ -15,7 +15,9 @@ export class InicioComponent implements OnInit {
   peliculas: Peli[] = [];
 
   constructor(private http: HttpClient,
-              private snackBar: MatSnackBar) { }
+              private snackBar: MatSnackBar,
+              private peliService: PeliService
+              ) { }
 
   ngOnInit(): void {
     this.catalogo();
@@ -37,13 +39,22 @@ export class InicioComponent implements OnInit {
     return data;
   }
 
-  async deletePeli(id: number){
-    const urlApi = 'https://6h3v78tvk2.execute-api.us-east-2.amazonaws.com/dev' + '/' + id;
-    const data: any = await this.http.delete(urlApi).toPromise();
-    this.openSnackBar();
-    this.catalogo();
-    return data;
+
+  deletePeli(id: string) {
+    this.peliService.deletePeli(id)
+      .then((data) => {
+        this.openSnackBar();
+        this.catalogo();
+      });
   }
+
+  // async deletePeli(id : number){
+  //   const urlApi = 'https://6h3v78tvk2.execute-api.us-east-2.amazonaws.com/dev' + '/' + id;
+  //   const data: any = await this.http.delete(urlApi).toPromise();
+  //   this.openSnackBar();
+  //   this.catalogo();
+  //   return data;
+  // }
 
 
   openSnackBar(): void {
