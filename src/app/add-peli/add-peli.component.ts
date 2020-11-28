@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Peli } from '../models/peli';
 import { PeliService } from '../services/peli.service';
 
@@ -20,7 +21,8 @@ export class AddPeliComponent implements OnInit {
   submitted = false;
 
   constructor(
-    private peliService: PeliService
+    private peliService: PeliService,
+    private snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -39,14 +41,22 @@ export class AddPeliComponent implements OnInit {
         response => {
           console.log(response, this.submitted);
           this.submitted = true;
+          this.openSnackBar();
         },
         error => {
           console.log(error);
         });
   }
 
-  newPeli(): void {
-    window.location.reload();
+  // newPeli(): void {
+  //   window.location.reload();
+  // }
+
+  openSnackBar(): void {
+    this.snackBar.open('Registro Guardado', '', {
+      duration: 2000,
+      panelClass: 'notif-success',
+    });
   }
 
 

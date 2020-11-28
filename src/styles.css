@@ -2,3 +2,8 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.notif-success{
+    background-color: rgb(240, 240, 240);
+    color: black;
+}

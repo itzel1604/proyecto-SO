@@ -62,3 +62,8 @@ mat-card-subtitle{
 mat-icon{
     color: #ffffff;
 }
+
+.primary-tooltip{
+    background: #ffffff;
+    color: red;
+}
