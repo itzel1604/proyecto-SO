@@ -1,4 +1,31 @@
-<div style="width: 400px; margin: auto;">
+<mat-toolbar>
+  <!-- <button mat-mini-fab color="primary">
+      <mat-icon>add</mat-icon>
+  </button> -->
+
+  <button
+    class="button"
+    mat-icon-button="mat-icon-button"
+    matTooltipClass="primary-tooltip"
+    aria-label="Example icon-button with a heart icon"
+    routerLink="/inicio"
+  >
+    <mat-icon>reply</mat-icon>
+  </button>
+
+  <span class="example-spacer"></span>
+
+  <span>Nesflis</span>
+
+  <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>share</mat-icon>
+  </button> -->
+</mat-toolbar>
+
+<!-- <div style="width: 400px; margin: auto;">
     <div class="submit-form">
       <div *ngIf="!submitted">
         <div class="form-group">
@@ -54,4 +81,87 @@
         <button class="btn btn-success" (click)="newPeli()">Agregar</button>
       </div>
     </div>
+  </div>  -->
+<div class="fondo">
+  <div class="contenedor">
+    <div class="fomulario">
+      
+      <form
+        class="form"
+        #formulario="ngForm"
+        *ngIf="!submitted"
+      >
+      <h1>Agregar pelicula</h1>
+        <mat-form-field class="input">
+          <mat-label>Nombre</mat-label>
+    
+          <input
+            matNativeControl="matNativeControl"
+            type="text"
+            matInput="matInput"
+            required="required"
+            [(ngModel)]="peli.name"
+            name="title"
+          >
+        </mat-form-field>
+    
+        <mat-form-field class="input">
+          <mat-label>Sinopsis</mat-label>
+    
+          <input
+            matNativeControl="matNativeControl"
+            matInput="matInput"
+            type="text"
+            required="required"
+            [(ngModel)]="peli.sinopsis"
+            name="sinopsis"
+          >
+        </mat-form-field>
+    
+        <mat-form-field class="input">
+          <mat-label>Imagen</mat-label>
+    
+          <input
+            matNativeControl="matNativeControl"
+            matInput="matInput"
+            type="text"
+            required="required"
+            [(ngModel)]="peli.img"
+            name="img"
+          >
+        </mat-form-field>
+    
+        <mat-form-field class="input">
+          <mat-label>ID</mat-label>
+    
+          <input
+            matNativeControl="matNativeControl"
+            matInput="matInput"
+            type="number"
+            required="required"
+            [(ngModel)]="peli.id"
+            name="id"
+          >
+        </mat-form-field>
+  
+      <button
+         mat-raised-button="mat-raised-button"
+        (click)="savePeli()">
+      Enviar
+      </button>
+      </form>
+  
+      <div *ngIf="submitted">
+        <h1>Registro exitoso!</h1>
+        <button
+        class="ver"
+         mat-raised-button="mat-raised-button"
+         routerLink="/inicio"
+        >
+      Ver
+      </button>
+      </div>
+    </div>
   </div>
+</div>
+
