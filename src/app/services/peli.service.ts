@@ -19,8 +19,7 @@ export class PeliService {
   }
 
   async deletePeli(id: string) {
-    let urlAPI =
-      environment.URLAPI + '/' + id;
+    let urlAPI = environment.URLAPI + '/' + id;
     const data: any = await this.http.delete(urlAPI).toPromise();
     return data;
   }
