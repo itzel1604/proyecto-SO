@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Peli } from '../models/peli';
+import { PeliService } from '../services/peli.service';
 
 @Component({
   selector: 'app-inicio',
@@ -12,7 +13,10 @@ export class InicioComponent implements OnInit {
   peticion: any;
   peliculas: Peli[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private peliService: PeliService
+    ) { }
 
   ngOnInit(): void {
     this.catalogos();
@@ -33,6 +37,14 @@ export class InicioComponent implements OnInit {
     const data: any = await this.http.get(urlAPI).toPromise();
     // console.log(data.body);
     return data;
+  }
+
+  deletePeli(id: string) {
+    this.peliService.deletePeli(id)
+      .then((data) => {
+        alert('Provedor removido con éxito');
+        window.location.reload();
+      });
   }
 
 }

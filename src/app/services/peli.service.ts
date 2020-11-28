@@ -14,20 +14,15 @@ export class PeliService {
     private http: HttpClient
   ) { }
 
-  get(id: number): Observable<any> {
-    return this.http.get(`${environment.URLAPI}/${id}`);
-  }
-
   create(data: Peli): Observable<any> {
     return this.http.post(environment.URLAPI, data);
   }
 
-  update(id: number, data: Peli): Observable<any> {
-    return this.http.put(`${environment.URLAPI}/${id}`, data);
-  }
-
-  delete(id: number): Observable<any> {
-    return this.http.delete(`${environment.URLAPI}/${id}`);
+  async deletePeli(id: string) {
+    let urlAPI =
+      environment.URLAPI + '/' + id;
+    const data: any = await this.http.delete(urlAPI).toPromise();
+    return data;
   }
 
 
