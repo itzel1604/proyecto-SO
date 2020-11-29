@@ -13,6 +13,7 @@ export class InicioComponent implements OnInit {
 
   peticion: any;
   peliculas: Peli[] = [];
+  peli: any;
 
   constructor(private http: HttpClient,
               private snackBar: MatSnackBar,

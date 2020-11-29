@@ -24,5 +24,14 @@ export class PeliService {
     return data;
   }
 
+  editPeli(id: string, data: Peli): Observable<any>{
+    let urlAPI = `${environment.URLAPI}/${id}`;
+    return this.http.post(urlAPI, data);
+  }
+
+  get(id: any) {
+    return this.http.get(`${environment.URLAPI}/${id}`);
+  }
+
 
 }
