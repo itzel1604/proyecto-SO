@@ -1,52 +1,171 @@
-<div *ngIf="currentPeli" class="edit-form">
-  <h4>Pelicula</h4>
-  <form>
-    <div class="form-group">
-      <label for="name">Nombre</label>
-      <input
-        type="text"
-        class="form-control"
-        id="name"
-        [(ngModel)]="currentPeli.name"
-        name="name"
-      />
-    </div>
-    <div class="form-group">
-      <label for="sinopsis">Sinopsis</label>
-      <input
-        type="text"
-        class="form-control"
-        id="sinopsis"
-        [(ngModel)]="currentPeli.sinopsis"
-        name="sinopsis"
-      />
-    </div>
-    <div class="form-group">
-      <label for="img">Imagen</label>
-      <input
-        type="text"
-        class="form-control"
-        id="img"
-        [(ngModel)]="currentPeli.img"
-        name="img"
-      />
-    </div>
-    <div class="form-group">
-      <label for="id">ID</label>
-      <input
-        type="text"
-        class="form-control"
-        id="id"
-        [(ngModel)]="currentPeli.id"
-        name="id"
-      />
-    </div>
-
-  </form>
-
-
-  <button type="submit" class="badge badge-success" (click)="updatePeli()">
-    Update
+<mat-toolbar>  
+  <button
+    class="button"
+    mat-icon-button="mat-icon-button"
+    matTooltipClass="primary-tooltip"
+    aria-label="Example icon-button with a heart icon"
+    routerLink="/inicio"
+  >
+    <mat-icon>reply</mat-icon>
   </button>
-  <p>{{ message }}</p>
-</div>
+
+  <span class="example-spacer"></span>
+
+  <span id="titulo">Nesflis</span>
+
+</mat-toolbar>
+
+<!-- <div>
+    <div *ngIf="currentPeli" class="edit-form">
+      <h4>Pelicula</h4>
+      <form>
+        <div class="form-group">
+          <label for="title">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            [(ngModel)]="currentPeli.name"
+            name="name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="sinopsis">Sinopsis</label>
+          <input
+            type="text"
+            class="form-control"
+            id="sinopsis"
+            [(ngModel)]="currentPeli.sinopsis"
+            name="sinopsis"
+          />
+        </div>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input
+              type="text"
+              class="form-control"
+              id="id"
+              [(ngModel)]="currentPeli.id"
+              name="id"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="img">Imagen</label>
+            <input
+              type="text"
+              class="form-control"
+              id="img"
+              [(ngModel)]="currentPeli.img"
+              name="img"
+            />
+          </div>
+  
+      </form>
+  
+      <button class="badge badge-danger mr-2" (click)="deletePeli()">
+        Borrar
+      </button>
+  
+      <button
+        type="submit"
+        class="badge badge-success"
+        (click)="updatePeli()"
+      >
+        Actualizar
+      </button>
+      <p>{{ message }}</p>
+    </div>
+  
+  </div> -->
+
+  <div class="fondo">
+    <div class="contenedor">
+      <div class="fomulario">
+        
+        <form
+          class="form"
+          #formulario="ngForm"
+        >
+        <h1>Actualizar pelicula</h1>
+          <mat-form-field class="input">
+            <mat-label>Nombre</mat-label>
+      
+            <input
+              matNativeControl="matNativeControl"
+              type="text"
+              matInput="matInput"
+              required="required"
+              [(ngModel)]="currentPeli.name"
+              name="title"
+            >
+          </mat-form-field>
+      
+          <mat-form-field class="input">
+            <mat-label>Sinopsis</mat-label>
+      
+            <input
+              matNativeControl="matNativeControl"
+              matInput="matInput"
+              type="text"
+              required="required"
+              [(ngModel)]="currentPeli.sinopsis"
+              name="sinopsis"
+            >
+          </mat-form-field>
+      
+          <mat-form-field class="input">
+            <mat-label>Imagen</mat-label>
+      
+            <input
+              matNativeControl="matNativeControl"
+              matInput="matInput"
+              type="text"
+              required="required"
+              [(ngModel)]="currentPeli.img"
+              name="img"
+            >
+          </mat-form-field>
+      
+          <mat-form-field class="input">
+            <mat-label>ID</mat-label>
+      
+            <input
+              matNativeControl="matNativeControl"
+              matInput="matInput"
+              type="number"
+              required="required"
+              [(ngModel)]="currentPeli.id"
+              name="id"
+            >
+          </mat-form-field>
+    
+        <button
+           mat-raised-button="mat-raised-button"
+           (click)="updatePeli()"
+          >
+        Actualizar
+        </button>
+        <!-- <button
+           mat-raised-button="mat-raised-button"
+           (click)="deletePeli()"
+          >
+        Borrar
+        </button> -->
+        </form>
+    
+        <!-- <div *ngIf="submitted">
+          <h1>Registro exitoso!</h1>
+          <button
+          class="ver"
+           mat-raised-button="mat-raised-button"
+           routerLink="/inicio"
+          >
+        Ver
+        </button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+  
+  

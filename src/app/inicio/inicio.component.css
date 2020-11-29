@@ -2,6 +2,11 @@ mat-toolbar{
     background-color: #252525;
 }
 
+#titulo{
+    color: rgb(241, 241, 241);
+}
+
+
 .body{
     background-color: #1d1d1d;
     

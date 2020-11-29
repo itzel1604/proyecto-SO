@@ -33,5 +33,4 @@ export class PeliService {
     return this.http.get(`${environment.URLAPI}/${id}`);
   }
 
-
 }

@@ -22,7 +22,7 @@
 
     <span class="example-spacer"></span>
 
-    <span>Nesflis</span>
+    <span id="titulo">Nesflis</span>
 
     <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
       <mat-icon>favorite</mat-icon>
@@ -61,6 +61,7 @@
                         class="button"
                         mat-icon-button="mat-icon-button"
                         matTooltip="Editar"
+                        [routerLink]="['/peli-detail', pelicula.id]"
                         aria-label="Button that displays a tooltip when focused or hovered over"
                         routerLink="/peli-detail/:{{ pelicula.id }}"
                     >
