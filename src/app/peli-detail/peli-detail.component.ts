@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PeliService } from '../services/peli.service';
 import { Peli } from '../models/peli';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-peli-detail',
@@ -21,7 +23,9 @@ export class PeliDetailComponent implements OnInit {
   constructor(
     private peliService: PeliService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private snackBar: MatSnackBar,
+    private http: HttpClient
   ) { }
 
   ngOnInit(): void {
@@ -47,7 +51,7 @@ export class PeliDetailComponent implements OnInit {
       .subscribe(
         response => {
           console.log(response);
-          this.message = 'La pelicula fue Actualizada correctamente!';
+          this.openSnackBar();
         },
         error => {
           console.log(error);
@@ -64,6 +68,13 @@ export class PeliDetailComponent implements OnInit {
         error => {
           console.log(error);
         });
+  }
+
+  openSnackBar(): void {
+    this.snackBar.open('Registro atualizado', 'Vuelve al inicio', {
+      duration: 4000,
+      panelClass: 'notif-success',
+    });
   }
 }
 

@@ -30,5 +30,4 @@ export class PeliService {
     return this.http.delete(`${environment.URLAPI}/${id}`);
   }
 
-
 }
